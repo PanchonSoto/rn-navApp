@@ -1,10 +1,34 @@
 import { View, Text } from 'react-native';
-import React from 'react';
+import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
+
+import { RootStackParams } from '../../routes/StackNavigator';
+import { globalStyles } from '../../themes/theme';
+import { useEffect } from 'react';
+
 
 const ProductScreen = () => {
+
+  const params = useRoute<RouteProp<RootStackParams, 'Product'>>().params;
+  const navigation = useNavigation();
+
+  useEffect(()=>{
+
+    navigation.setOptions({
+      title: params.name
+    });
+
+  },[]);
+  
   return (
-    <View>
+    <View style={globalStyles.container}>
       <Text>ProductScreen</Text>
+      <Text style={{
+        fontSize: 20,
+        textAlign: 'center',
+        marginTop: 20
+      }}>
+        { params.id } - { params.name }
+      </Text>
     </View>
   )
 }

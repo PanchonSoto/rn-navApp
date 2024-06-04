@@ -5,6 +5,7 @@ import ProfileScreen from '../screens/profile/ProfileScreen';
 
 import { globalColors } from '../themes/theme';
 import { View, useWindowDimensions } from 'react-native';
+import { BottomTabsNav } from './BottomTabsNav';
 
 const Drawer = createDrawerNavigator();
 
@@ -31,7 +32,8 @@ export const SideMenuNav = () => {
         }
       }}
     >
-      <Drawer.Screen name="StackNavigator" component={StackNavigator} />
+      {/* <Drawer.Screen name="StackNavigator" component={StackNavigator} /> */
+      <Drawer.Screen name="Tabs" component={BottomTabsNav} />}
       <Drawer.Screen name="Profile" component={ProfileScreen} />
     </Drawer.Navigator>
   );

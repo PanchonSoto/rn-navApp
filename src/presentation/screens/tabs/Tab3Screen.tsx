@@ -1,10 +1,14 @@
 import { View, Text } from 'react-native';
-import React from 'react';
+
+import HamburgerMenu from '../../components/shared/HamburgerMenu';
+import { StackNavigator } from '../../routes/StackNavigator';
+
 
 const Tab3Screen = () => {
   return (
     <View>
-      <Text>Tab1Screen</Text>
+      <HamburgerMenu />
+      <Text>Tab3Screen</Text>
     </View>
   )
 }
